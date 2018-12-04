@@ -4,13 +4,8 @@ from flask import Flask, request, jsonify
 
 from gdiff import GDiff 
 
-# TODO: add Dockerfile 
-# TODO: add microservice.yml
-# TODO: add basic unit test
-
 app = Flask(__name__)
 gdiff = GDiff()
-
 
 def validate_diff(fn):
   @wraps(fn)
@@ -58,4 +53,4 @@ def diff():
 
 
 if __name__ == "__main__":
-  app.run(debug=True, port=5000, host='0.0.0.0')
+  app.run(port=5000, host='0.0.0.0')

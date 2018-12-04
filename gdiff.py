@@ -1,7 +1,8 @@
 from diff_match_patch import diff_match_patch
 
+
 class GDiff:
-  def __init__(self):
+  def __init__(self) -> None:
     self.dmp = diff_match_patch()
   
   def _patch(self, t1, t2) -> object:

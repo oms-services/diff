@@ -4,8 +4,13 @@ from flask import Flask, request, jsonify
 
 from gdiff import GDiff 
 
+# TODO: add Dockerfile 
+# TODO: add microservice.yml
+# TODO: add basic unit test
+
 app = Flask(__name__)
 gdiff = GDiff()
+
 
 def validate_diff(fn):
   @wraps(fn)
@@ -27,17 +32,18 @@ def validate_diff(fn):
 
   return wrapper
 
+
 @app.route("/diff/", methods=['POST', 'GET'])
 @validate_diff
 def diff_raw():
-  content = request.diff_data
+  content = request.diff_dat
   t1 = content['t1']
   t2 = content['t2']
   return jsonify({
     'diff': gdiff.dmp.diff_main(t1, t2),
     'type': 'raw'
   }), 200
-  
+
 
 @app.route("/diff/raw/", methods=['POST', 'GET'])
 @validate_diff
@@ -47,10 +53,9 @@ def diff():
   t2 = content['t2']
   return jsonify({
     'diff': gdiff.diff(t1, t2),
-    'type': 'raw'
+    'type': 'parsed'
   }), 200
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
-
+  app.run(debug=True, port=5000, host='0.0.0.0')

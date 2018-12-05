@@ -9,7 +9,7 @@ PAYLOAD_NULL = {'t1': 'This is a Text', 't3': 'this is NOT a Text'}
 
 
 class TestDiff(unittest.TestCase):
-  def test_basic(self):  
+  def test_basic(self):
     with app.test_client() as cl:
       response = cl.post('/diff/', data=json.dumps(PAYLOAD), content_type='application/json')
       self.assertEqual(response.status_code, 200)

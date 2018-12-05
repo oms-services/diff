@@ -8,6 +8,10 @@ app = Flask(__name__)
 gdiff = GDiff()
 
 def validate_diff(fn):
+  '''
+  validator function for all endpoints.
+  Currently it adds an unofficial support for GET requests too, which is not dicumented.
+  '''
   @wraps(fn)
   def wrapper(*args, **kwargs):
     if request.method == 'POST':
@@ -46,4 +50,4 @@ def diff():
 
 
 if __name__ == "__main__":
-  app.run(port=5000, host='0.0.0.0')
+  app.run(port=8000, host='0.0.0.0')

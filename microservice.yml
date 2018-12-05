@@ -9,6 +9,7 @@ actions:
       path: /diff/
       port: 8000
       method: post
+      contentType: application/json
     arguments:
       t1: 
         type: string
@@ -21,12 +22,18 @@ actions:
     output: 
       contentType: application/json
       type: object
+      properties:
+        type:
+          type: string
+        diff:
+          type: object 
 
   diff_raw:
     http:
       path: /diff/raw/
       port: 8000
       method: post
+      contentType: application/json
     arguments:
       t1: 
         type: string
@@ -39,3 +46,8 @@ actions:
     output: 
       contentType: application/json
       type: object
+      properties:
+        type:
+          type: string
+        diff:
+          type: object

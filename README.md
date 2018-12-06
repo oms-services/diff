@@ -14,7 +14,11 @@ $ omg exec diff t1:"thisisatext" t2:"thisisNOTatext"
 
 ### Storyscript 
 
-> TODO
+```coffeescript
+diff diff t1: "thisisatext" t2: "thisisNOTatext"
+diff diff_raw t1: "thisisatext" t2: "thisisNOTatext"
+```
+
 
 The following show and example output for `GET /diff/?t1=This&t2=boo`
 

@@ -12,34 +12,15 @@ $ omg validate
 $ omg exec diff t1:"thisisatext" t2:"thisisNOTatext"
 ```
 
-### StoryScript 
+### Storyscript 
 
 > TODO
-
-### Mnual Build and Run 
-
-```bash
-# Setup 
-$ virtualenv venv --python=python3.6
-$ source venv/bin/activate 
-$ pip install -r requirements.text
-
-# To run tests
-$ python -m unittest 
-
-# To run dev server locally 
-$ python app.py
-
-# To run via Docker 
-$ docker build -t diff . 
-$ docker run diff
-```
 
 The following show and example output for `GET /diff/?t1=This&t2=boo`
 
 #### Example of parsed output via `/parse/`:
 
-```
+```diff
 {
     "diff": "@@ -1,4 +1,3 @@\n-This\n+boo\n",
     "type": "parsed"

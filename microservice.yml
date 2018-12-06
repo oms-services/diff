@@ -1,4 +1,3 @@
-
 omg: 1
 lifecycle:
   startup:
@@ -26,7 +25,7 @@ actions:
         type:
           type: string
         diff:
-          type: object 
+          type: string 
 
   diff_raw:
     http:

@@ -1,0 +1,52 @@
+omg: 1
+lifecycle:
+  startup:
+    command: ["python", "/app/app.py"]
+actions:
+  diff:
+    http:
+      path: /diff/
+      port: 8000
+      method: post
+      contentType: application/json
+    arguments:
+      t1: 
+        type: string
+        required: true
+        in: requestBody
+      t2:
+        type: string
+        required: true
+        in: requestBody
+    output: 
+      contentType: application/json
+      type: object
+      properties:
+        type:
+          type: string
+        diff:
+          type: string 
+
+  diff_raw:
+    http:
+      path: /diff/raw/
+      port: 8000
+      method: post
+      contentType: application/json
+    arguments:
+      t1: 
+        type: string
+        required: true
+        in: requestBody
+      t2:
+        type: string
+        required: true
+        in: requestBody
+    output: 
+      contentType: application/json
+      type: object
+      properties:
+        type:
+          type: string
+        diff:
+          type: object

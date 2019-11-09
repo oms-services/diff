@@ -1,24 +1,15 @@
 # diff
-An OMG service to diff text content. Uses google's [diff-match-patch](https://github.com/google/diff-match-patch).
 
-# How to Run
+An OMS service to diff text content. Uses Google's
+[diff-match-patch](https://github.com/google/diff-match-patch).
 
-### OMG-CLI
+## How to Run
 
-```bash 
-$ npm install -g omg
+### OMS-CLI
 
-$ omg validate 
-$ omg exec diff t1:"thisisatext" t2:"thisisNOTatext"
+```console
+$ oms run diff -a t1="thisisatext" -a t2="thisisNOTatext"
 ```
-
-### Storyscript 
-
-```coffeescript
-diff diff t1: "thisisatext" t2: "thisisNOTatext"
-diff diff_raw t1: "thisisatext" t2: "thisisNOTatext"
-```
-
 
 The following show and example output for `GET /diff/?t1=This&t2=boo`
 

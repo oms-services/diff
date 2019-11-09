@@ -1,7 +1,11 @@
-omg: 1
+oms: 1
+info:
+  version: 1.0.0
+  title: Diff Text
+  description: Determines the diff between two pieces of text content.
 lifecycle:
   startup:
-    command: ["python", "/app/app.py"]
+    command: ['python', '/app/app.py']
 actions:
   diff:
     http:
@@ -10,7 +14,7 @@ actions:
       method: post
       contentType: application/json
     arguments:
-      t1: 
+      t1:
         type: string
         required: true
         in: requestBody
@@ -18,14 +22,14 @@ actions:
         type: string
         required: true
         in: requestBody
-    output: 
+    output:
       contentType: application/json
       type: object
       properties:
         type:
           type: string
         diff:
-          type: string 
+          type: string
 
   diff_raw:
     http:
@@ -34,7 +38,7 @@ actions:
       method: post
       contentType: application/json
     arguments:
-      t1: 
+      t1:
         type: string
         required: true
         in: requestBody
@@ -42,11 +46,11 @@ actions:
         type: string
         required: true
         in: requestBody
-    output: 
+    output:
       contentType: application/json
       type: object
       properties:
         type:
           type: string
         diff:
-          type: object
+          type: list

@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - '12'
+
+services:
+  - docker
+
+before_install:
+  - npm i @microservices/oms
+
+script:
+  - npx oms build
+  - |
+    output="$(npx oms run --silent diff -a t1="This" -a t2="boo" | jq -c .)"
+    if [ "$output" != '{"diff":"@@ -1,4 +1,3 @@\n-This\n+boo\n","type":"parsed"}' ] ; then echo "$output"; exit 1; fi

@@ -3,9 +3,15 @@ info:
   version: 1.0.0
   title: Diff Text
   description: Determines the diff between two pieces of text content.
+  contact:
+    name: Open Microservices
+    url: 'https://openmicroservices.org'
+    email: core@openmicroservices.org
 lifecycle:
   startup:
-    command: ['python', '/app/app.py']
+    command:
+      - python
+      - /app/app.py
 actions:
   diff:
     http:
@@ -30,7 +36,6 @@ actions:
           type: string
         diff:
           type: string
-
   diff_raw:
     http:
       path: /diff/raw/

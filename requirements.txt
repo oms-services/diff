@@ -1,2 +1,2 @@
 diff-match-patch==20181111
-Flask==1.1.1
+Flask==1.1.2
